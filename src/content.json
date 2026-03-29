@@ -29,7 +29,7 @@
     ],
     "hero": {
       "eyebrow": "Narrative Design Workspace",
-      "title": "Спокойный и структурный сайт для сложного narrative-инструмента.",
+      "title": "Визуальный workspace для ветвящихся историй, диалогов и narrative-систем.",
       "body": "Gordian Node это браузерное рабочее пространство для ветвящихся диалогов, сценариев и интерактивных историй. Здесь граф, текст, мир, логика, плейтест и экспорт собираются в одной системе, а не расходятся по нескольким несвязанным документам.",
       "primary": "Открыть live build",
       "secondary": "Посмотреть репозиторий",
@@ -60,8 +60,8 @@
     "sections": {
       "overview": {
         "eyebrow": "О проекте",
-        "title": "Не агрессивный лендинг, а аккуратная продуктовая витрина.",
-        "body": "Эта версия сайта подаёт Gordian Node как зрелую рабочую среду. Тон спокойнее, тексты опираются на README, а обновления продукта встроены в общую картину вместо отдельной шумной секции.",
+        "title": "Gordian Node объединяет граф, текст, логику и плейтест в одном рабочем пространстве.",
+        "body": "Проект рассчитан на сценаристов, narrative designers и команды, которым нужен единый центр управления структурой интерактивной истории. Вместо разрозненных заметок, таблиц и документов здесь всё собирается в одной системе.",
         "cards": [
           {
             "title": "Что это за инструмент",
@@ -139,44 +139,44 @@
         ]
       },
       "combined": {
-        "eyebrow": "README + Changelog",
-        "title": "Что обещает архитектура продукта и как это уже усиливается свежими изменениями.",
-        "body": "Здесь README задаёт основу, а changelog показывает реальное движение. Такой формат помогает объяснить не только что есть в продукте, но и как он становится удобнее, глубже и зрелее.",
+        "eyebrow": "Развитие продукта",
+        "title": "Последние обновления усиливают ключевые рабочие режимы Gordian Node.",
+        "body": "Gordian Node развивается не точечно, а сразу по нескольким важным слоям: narrative logic, writing flow, playtest, export и управление проектами. Этот блок показывает, какие части продукта стали заметно сильнее в последних обновлениях.",
         "cards": [
           {
-            "kicker": "Graph + logic",
-            "title": "Граф уже не просто визуальная карта сцен.",
-            "body": "README описывает графовый редактор с диалогами, сценами и переходами. Changelog добавляет Rule Sheet, LogicBuilder, condition modes и более читаемое отображение логики прямо на канвасе.",
+            "kicker": "Logic",
+            "title": "Логика стала более читаемой и управляемой.",
+            "body": "В продукте усилились Rule Sheet, LogicBuilder, condition modes и визуальное представление условий и эффектов прямо на канвасе.",
             "bullets": [
-              "Это делает сайт убедительнее для narrative designers.",
-              "Можно показывать не абстрактный canvas, а рабочую систему логики."
+              "сложные ветвления легче читать и поддерживать",
+              "условия и эффекты видны как часть narrative structure, а не как скрытая механика"
             ]
           },
           {
-            "kicker": "Script Studio",
-            "title": "Текстовый режим растёт в сторону полноценного production workflow.",
-            "body": "README фиксирует двустороннюю синхронизацию, Fountain и editor/preview flow. Changelog усиливает это character autocomplete, AI-awareness и улучшениями внутри студии.",
+            "kicker": "Writing",
+            "title": "Script Studio движется к более зрелому writing workflow.",
+            "body": "Автодополнение, logic-aware подсказки и улучшения студии делают текстовый режим полезным не только для черновиков, но и для системной работы над сценарием.",
             "bullets": [
-              "Продукт держит и writing flow, и структурную точность.",
-              "Это одна из самых сильных зон для видео и скриншотов."
+              "удобнее писать длинные сцены и синхронизировать их с графом",
+              "AI и редактор лучше поддерживают narrative context"
             ]
           },
           {
-            "kicker": "QA + export",
-            "title": "Плейтест и экспорт стали важной частью общей ценности.",
-            "body": "README уже говорит про аналитику, линтер и экспорт. Последние изменения добавляют save/load, rewind, debug, coverage-метрики и playable HTML-export.",
+            "kicker": "Playtest",
+            "title": "Плейтест стал более практичным инструментом проверки.",
+            "body": "Сохранения, rewind, debug и coverage-метрики позволяют проверять прохождение прямо внутри рабочей среды.",
             "bullets": [
-              "Инструмент помогает не только писать, но и проверять.",
-              "Это хороший материал для публичного changelog и devlog."
+              "быстрее искать слабые места в логике и темпе истории",
+              "удобнее показывать состояние проекта команде или партнёрам"
             ]
           },
           {
-            "kicker": "Project layer",
-            "title": "Даже слой управления проектами заметно взрослеет.",
-            "body": "README описывает многослойный workspace, а свежие изменения улучшают первый экран через ProjectManager redesign, cover images, descriptions и MindSpace.",
+            "kicker": "Project flow",
+            "title": "Управление проектами и первый вход стали лучше выглядеть и работать.",
+            "body": "Редизайн ProjectManager, описания проектов, cover images и MindSpace улучшают общий опыт работы с проектом на длинной дистанции.",
             "bullets": [
-              "Появляется сильнее выраженный first-run experience.",
-              "Это делает сам продукт визуально более законченным."
+              "продукт воспринимается как цельный workspace",
+              "первый экран и вход в проект стали заметно чище"
             ]
           }
         ]
@@ -221,7 +221,8 @@
           "создание сцены на канвасе и быстрые связи между нодами",
           "переход в Script Studio и обратную синхронизацию",
           "playtest, аналитику и playable HTML-export"
-        ]
+        ],
+        "items": []
       },
       "changelog": {
         "eyebrow": "Последние изменения",
@@ -338,22 +339,64 @@
             "body": "GitHub Pages или Netlify для публикации, плюс простая веб-аналитика, чтобы понять, что смотрят на сайте чаще всего."
           }
         ]
+      },
+      "articles": {
+        "eyebrow": "Статьи и заметки",
+        "title": "На сайте можно публиковать devlog, материалы по инструменту и обновления проекта.",
+        "body": "Этот раздел можно использовать как продуктовый блог: объяснять подход к нарративному дизайну, выкладывать заметки о новых возможностях и публиковать материалы по использованию Gordian Node.",
+        "items": [
+          {
+            "date": "2026-03-29",
+            "title": "Что такое Gordian Node",
+            "excerpt": "Короткое введение в инструмент для ветвящихся диалогов и интерактивных историй.",
+            "body": "Gordian Node задуман как единое рабочее пространство для сценаристов, narrative designers и команд, которые работают со сложной структурой интерактивного текста. Вместо того чтобы разводить граф, сценарий, переменные, лор и проверку прохождения по разным файлам и сервисам, продукт собирает их в одной системе.",
+            "tags": [
+              "overview",
+              "product"
+            ]
+          },
+          {
+            "date": "2026-03-29",
+            "title": "Почему важен playtest внутри редактора",
+            "excerpt": "Одна из сильных сторон проекта — возможность проверять narrative flow без выхода во внешний рантайм.",
+            "body": "Когда narrative-инструмент умеет не только хранить структуру, но и проигрывать её, команда быстрее замечает тупики, несогласованность логики и провисающие ветки. Это особенно важно для проектов, где сценарий меняется часто и в нескольких местах сразу.",
+            "tags": [
+              "playtest",
+              "workflow"
+            ]
+          }
+        ]
+      },
+      "resources": {
+        "eyebrow": "Ресурсы",
+        "title": "Здесь можно размещать ссылки, файлы и полезные материалы по проекту.",
+        "body": "Раздел подходит для документации, пресс-кита, демо-материалов, PDF-файлов, гайдов, ссылок на репозиторий и других сопровождающих ресурсов.",
+        "items": [
+          {
+            "title": "Live build",
+            "body": "Текущая опубликованная версия приложения.",
+            "url": "https://narrative-tool-cfdf9.web.app",
+            "type": "link"
+          },
+          {
+            "title": "GitHub repository",
+            "body": "Основной репозиторий проекта.",
+            "url": "https://github.com/Odisano/lusnidzor-architect",
+            "type": "repository"
+          }
+        ]
       }
     },
     "footer": {
-      "note": "Сайт собран как спокойная product-facing витрина для Gordian Node.",
+      "note": "Gordian Node — visual workspace for branching dialogue, narrative systems, and interactive story design.",
       "links": [
         {
           "label": "Live app",
           "href": "https://narrative-tool-cfdf9.web.app"
         },
         {
-          "label": "Main repository",
+          "label": "GitHub",
           "href": "https://github.com/Odisano/lusnidzor-architect"
-        },
-        {
-          "label": "Promo repository",
-          "href": "https://github.com/Odisano/gordian-node-promo-site"
         }
       ]
     }
@@ -388,7 +431,7 @@
     ],
     "hero": {
       "eyebrow": "Narrative Design Workspace",
-      "title": "A calmer product site for a complex narrative tool.",
+      "title": "A visual workspace for branching stories, dialogue, and narrative systems.",
       "body": "Gordian Node is a browser-based workspace for branching dialogue, narrative structure, worldbuilding, logic, playtesting, and export. Instead of scattering that work across unrelated documents, it keeps the whole system in one place.",
       "primary": "Open live build",
       "secondary": "View repository",
@@ -419,8 +462,8 @@
     "sections": {
       "overview": {
         "eyebrow": "Overview",
-        "title": "Less aggressive marketing, more product clarity.",
-        "body": "This version presents Gordian Node as a serious working environment. The tone is quieter, the copy stays closer to the README, and recent product updates are integrated into the wider story instead of isolated as a noisy feature wall.",
+        "title": "Gordian Node brings graph, writing, logic, and playtest into one workspace.",
+        "body": "The project is aimed at writers, narrative designers, and teams that need a single place to manage the structure of interactive story work. Instead of splitting that work across notes, spreadsheets, and separate documents, Gordian Node keeps it connected.",
         "cards": [
           {
             "title": "What the tool is",
@@ -498,44 +541,44 @@
         ]
       },
       "combined": {
-        "eyebrow": "README + Changelog",
-        "title": "What the architecture promises and how current development already reinforces it.",
-        "body": "This section ties the README to the changelog. One describes the product shape, the other proves where that shape is becoming deeper, smoother, and more mature.",
+        "eyebrow": "Product evolution",
+        "title": "Recent updates are strengthening the core working modes of Gordian Node.",
+        "body": "Gordian Node is not evolving in just one narrow area. Recent work improves narrative logic, writing flow, playtesting, export, and project management together. This section shows which product layers are currently becoming more capable.",
         "cards": [
           {
-            "kicker": "Graph + logic",
-            "title": "The graph is already more than a visual scene map.",
-            "body": "The README establishes a graph editor with dialogue, scenes, and transitions. The changelog extends that with Rule Sheet, LogicBuilder, condition modes, and clearer logic representation directly on the canvas.",
+            "kicker": "Logic",
+            "title": "Narrative logic is becoming more readable and manageable.",
+            "body": "Rule Sheet, LogicBuilder, condition modes, and clearer visual conditions/effects make complex branching easier to inspect and maintain.",
             "bullets": [
-              "That is compelling for narrative designers.",
-              "The site can show a real logic workspace, not just a diagram editor."
+              "complex narrative logic becomes easier to read",
+              "conditions and effects become part of the visible structure rather than hidden implementation detail"
             ]
           },
           {
-            "kicker": "Script Studio",
-            "title": "The writing mode is growing toward a fuller production workflow.",
-            "body": "The README anchors Fountain, two-way sync, and an editor/preview flow. The changelog then strengthens that with character autocomplete, AI awareness, and studio-level UX improvements.",
+            "kicker": "Writing",
+            "title": "Script Studio is moving toward a more mature writing workflow.",
+            "body": "Autocomplete, logic-aware assistance, and studio-level editing improvements make the writing mode useful for sustained screenplay work, not only rough drafting.",
             "bullets": [
-              "The product supports both writing flow and structural control.",
-              "This is one of the strongest sections for screenshots and video."
+              "long scenes are easier to write and sync with the graph",
+              "the editor and AI both carry more narrative context"
             ]
           },
           {
-            "kicker": "QA + export",
-            "title": "Playtest and export have become part of the core value.",
-            "body": "The README already includes analytics, linting, and export. Recent work adds save/load, rewind, debug, coverage metrics, and a playable HTML export.",
+            "kicker": "Playtest",
+            "title": "Playtesting is becoming a more practical validation tool.",
+            "body": "Saves, rewind, debug, and coverage metrics make it easier to validate story flow directly inside the workspace.",
             "bullets": [
-              "The tool helps with validation, not only authoring.",
-              "This is strong material for public updates and devlogs."
+              "teams can inspect weak points in structure faster",
+              "project state becomes easier to demonstrate to collaborators or partners"
             ]
           },
           {
-            "kicker": "Project layer",
-            "title": "Even project management and first-run experience are maturing.",
-            "body": "The README outlines a broader workspace, while the latest changes improve first contact through a redesigned ProjectManager, cover images, descriptions, and MindSpace.",
+            "kicker": "Project flow",
+            "title": "Project management and first-run experience are improving too.",
+            "body": "The redesigned ProjectManager, project descriptions, cover images, and MindSpace make the overall workspace feel more complete and easier to enter.",
             "bullets": [
-              "The product feels more complete as a workspace.",
-              "The entry experience itself is becoming easier to present."
+              "the product reads more clearly as a unified workspace",
+              "the first screen and entry flow feel noticeably cleaner"
             ]
           }
         ]
@@ -580,7 +623,8 @@
           "creating a scene on the canvas and connecting nodes",
           "moving into Script Studio and syncing back",
           "playtest, analytics, and playable HTML export"
-        ]
+        ],
+        "items": []
       },
       "changelog": {
         "eyebrow": "Recent changes",
@@ -697,22 +741,64 @@
             "body": "GitHub Pages or Netlify for publishing, plus lightweight analytics to understand which sections visitors actually use."
           }
         ]
+      },
+      "articles": {
+        "eyebrow": "Articles and notes",
+        "title": "The site can publish devlog entries, product notes, and longer project articles.",
+        "body": "This section works as a product blog: explain design decisions, introduce new features, or publish notes about how Gordian Node fits different narrative workflows.",
+        "items": [
+          {
+            "date": "2026-03-29",
+            "title": "What Gordian Node is built for",
+            "excerpt": "A short introduction to the product as a workspace for branching dialogue and interactive storytelling.",
+            "body": "Gordian Node is designed as a single workspace for writers, narrative designers, and teams working on interactive text. Instead of splitting graph structure, screenplay text, variables, worldbuilding, and validation across separate tools, it keeps them connected in one system.",
+            "tags": [
+              "overview",
+              "product"
+            ]
+          },
+          {
+            "date": "2026-03-29",
+            "title": "Why embedded playtesting matters",
+            "excerpt": "One of the strongest product directions is validating story flow without leaving the editor.",
+            "body": "When a narrative tool can both structure and play through the story, teams can spot dead ends, pacing problems, and logic inconsistencies much earlier. That matters even more in projects where branching content changes frequently.",
+            "tags": [
+              "playtest",
+              "workflow"
+            ]
+          }
+        ]
+      },
+      "resources": {
+        "eyebrow": "Resources",
+        "title": "This area can host links, files, and supporting project materials.",
+        "body": "Use it for documentation, press kits, demo materials, PDFs, guides, repository links, and other useful resources around Gordian Node.",
+        "items": [
+          {
+            "title": "Live build",
+            "body": "Current published version of the application.",
+            "url": "https://narrative-tool-cfdf9.web.app",
+            "type": "link"
+          },
+          {
+            "title": "GitHub repository",
+            "body": "Main source repository for the project.",
+            "url": "https://github.com/Odisano/lusnidzor-architect",
+            "type": "repository"
+          }
+        ]
       }
     },
     "footer": {
-      "note": "This site is framed as a calm, product-facing presentation of Gordian Node.",
+      "note": "Gordian Node is a visual workspace for branching dialogue, narrative systems, and interactive story design.",
       "links": [
         {
           "label": "Live app",
           "href": "https://narrative-tool-cfdf9.web.app"
         },
         {
-          "label": "Main repository",
+          "label": "GitHub",
           "href": "https://github.com/Odisano/lusnidzor-architect"
-        },
-        {
-          "label": "Promo repository",
-          "href": "https://github.com/Odisano/gordian-node-promo-site"
         }
       ]
     }
