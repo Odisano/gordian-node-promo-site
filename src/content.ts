@@ -1,0 +1,639 @@
+export type Locale = "ru" | "en";
+
+type LinkItem = {
+  label: string;
+  href: string;
+};
+
+type Card = {
+  title: string;
+  body: string;
+  bullets?: string[];
+  kicker?: string;
+  note?: string;
+};
+
+type ScreenshotItem = {
+  title: string;
+  body: string;
+  image: string;
+  size?: "wide" | "tall";
+};
+
+type LocaleContent = {
+  metaTitle: string;
+  nav: LinkItem[];
+  hero: {
+    eyebrow: string;
+    title: string;
+    body: string;
+    primary: string;
+    secondary: string;
+    facts: string[];
+    metrics: { value: string; label: string }[];
+  };
+  sections: {
+    overview: { eyebrow: string; title: string; body: string; cards: Card[] };
+    workflows: { eyebrow: string; title: string; body: string; cards: Card[] };
+    combined: { eyebrow: string; title: string; body: string; cards: Card[] };
+    gallery: { eyebrow: string; title: string; body: string; items: ScreenshotItem[] };
+    video: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      placeholderTitle: string;
+      placeholderBody: string;
+      notesTitle: string;
+      notes: string[];
+    };
+    changelog: {
+      eyebrow: string;
+      title: string;
+      body: string;
+      highlights: { label: string; title: string; body: string }[];
+      items: { tag: string; title: string; body: string; bullets: string[] }[];
+    };
+    stack: { eyebrow: string; title: string; body: string; cards: Card[] };
+    next: { eyebrow: string; title: string; body: string; cards: Card[] };
+  };
+  footer: {
+    note: string;
+    links: LinkItem[];
+  };
+};
+
+export const repoUrl = "https://github.com/Odisano/lusnidzor-architect";
+export const liveUrl = "https://narrative-tool-cfdf9.web.app";
+export const promoRepoUrl = "https://github.com/Odisano/gordian-node-promo-site";
+export const videoEmbedUrl = "";
+
+export const content: Record<Locale, LocaleContent> = {
+  ru: {
+    metaTitle: "Gordian Node | Narrative workspace",
+    nav: [
+      { label: "Обзор", href: "#overview" },
+      { label: "Возможности", href: "#workflows" },
+      { label: "Сейчас в продукте", href: "#combined" },
+      { label: "Скриншоты", href: "#gallery" },
+      { label: "Обновления", href: "#changelog" },
+      { label: "Что ещё нужно", href: "#next" },
+    ],
+    hero: {
+      eyebrow: "Narrative Design Workspace",
+      title: "Спокойный и структурный сайт для сложного narrative-инструмента.",
+      body: "Gordian Node это браузерное рабочее пространство для ветвящихся диалогов, сценариев и интерактивных историй. Здесь граф, текст, мир, логика, плейтест и экспорт собираются в одной системе, а не расходятся по нескольким несвязанным документам.",
+      primary: "Открыть live build",
+      secondary: "Посмотреть репозиторий",
+      facts: [
+        "Визуальный граф, Script Studio, worldbuilding, QA и экспорт в одном продукте.",
+        "Подходит для сценаристов, narrative designers и небольших игровых команд.",
+        "README и changelog уже показывают не только идею, но и активное развитие инструмента.",
+      ],
+      metrics: [
+        { value: "React 19", label: "базовый стек продукта" },
+        { value: "JSON / Ink / Twee / Fountain / HTML", label: "экспортные форматы" },
+        { value: "AI + QA + Playtest", label: "не только авторинг, но и проверка" },
+        { value: "RU / EN", label: "интерфейс и подача для двух аудиторий" },
+      ],
+    },
+    sections: {
+      overview: {
+        eyebrow: "О проекте",
+        title: "Не агрессивный лендинг, а аккуратная продуктовая витрина.",
+        body: "Эта версия сайта подаёт Gordian Node как зрелую рабочую среду. Тон спокойнее, тексты опираются на README, а обновления продукта встроены в общую картину вместо отдельной шумной секции.",
+        cards: [
+          {
+            title: "Что это за инструмент",
+            body: "Визуальный редактор нарративных проектов, где разветвления, реплики, условия и сцены собираются как управляемая система.",
+          },
+          {
+            title: "Для кого он нужен",
+            body: "Для авторов интерактивных историй, visual novel проектов, RPG-диалогов и narrative-прототипов.",
+          },
+          {
+            title: "Почему сайт спокойнее",
+            body: "Потому что самому продукту больше подходит уверенная продуктовая подача, чем агрессивный маркетинг.",
+          },
+        ],
+      },
+      workflows: {
+        eyebrow: "Core workflows",
+        title: "Основные рабочие слои, которые стоит показывать на сайте.",
+        body: "Сильнее всего Gordian Node раскрывается не через общий список фич, а через несколько понятных сценариев использования.",
+        cards: [
+          {
+            title: "Граф узлов",
+            body: "Канвас для сцен, реплик, условий, переходов, групп и логических связей.",
+            bullets: ["Quick Connect и мультивыделение", "Поиск, layout, фильтры и сцены", "Наглядное отображение условий и эффектов"],
+          },
+          {
+            title: "Script Studio",
+            body: "Текстовый режим для письма в формате Fountain с двусторонней синхронизацией между сценарием и графом.",
+            bullets: ["Автодополнение персонажей, локаций и переменных", "Редактор, превью и split-view", "Подходит для длинной сценарной работы"],
+          },
+          {
+            title: "Worldbuilding",
+            body: "Библия мира, кодекс персонажей, атлас локаций, переменные и библиотека ассетов внутри одного проекта.",
+            bullets: ["Контекст для команды", "Контекст для AI", "Структура для больших narrative-проектов"],
+          },
+          {
+            title: "AI-слой",
+            body: "Gemini встроен как рабочий помощник, который помогает с идеями, сценами, логикой и импортером текста.",
+            bullets: ["Подсказки на основе мира проекта", "Импорт сырого текста и лора", "Помощь с продолжением сцен"],
+          },
+          {
+            title: "QA и плейтест",
+            body: "Проверка структуры истории происходит внутри редактора, а не после экспорта во внешний инструмент.",
+            bullets: ["Graph Linter и аналитика", "Сохранения, rewind и debug", "TimeMachine и snapshots"],
+          },
+          {
+            title: "Экспорт",
+            body: "Проект можно передавать дальше в другие пайплайны или быстро показывать как самостоятельный интерактивный билд.",
+            bullets: ["JSON, Ink, Twee и Fountain", "Playable HTML-export", "Подходит для демо и ревью"],
+          },
+        ],
+      },
+      combined: {
+        eyebrow: "README + Changelog",
+        title: "Что обещает архитектура продукта и как это уже усиливается свежими изменениями.",
+        body: "Здесь README задаёт основу, а changelog показывает реальное движение. Такой формат помогает объяснить не только что есть в продукте, но и как он становится удобнее, глубже и зрелее.",
+        cards: [
+          {
+            kicker: "Graph + logic",
+            title: "Граф уже не просто визуальная карта сцен.",
+            body: "README описывает графовый редактор с диалогами, сценами и переходами. Changelog добавляет Rule Sheet, LogicBuilder, condition modes и более читаемое отображение логики прямо на канвасе.",
+            bullets: ["Это делает сайт убедительнее для narrative designers.", "Можно показывать не абстрактный canvas, а рабочую систему логики."],
+          },
+          {
+            kicker: "Script Studio",
+            title: "Текстовый режим растёт в сторону полноценного production workflow.",
+            body: "README фиксирует двустороннюю синхронизацию, Fountain и editor/preview flow. Changelog усиливает это character autocomplete, AI-awareness и улучшениями внутри студии.",
+            bullets: ["Продукт держит и writing flow, и структурную точность.", "Это одна из самых сильных зон для видео и скриншотов."],
+          },
+          {
+            kicker: "QA + export",
+            title: "Плейтест и экспорт стали важной частью общей ценности.",
+            body: "README уже говорит про аналитику, линтер и экспорт. Последние изменения добавляют save/load, rewind, debug, coverage-метрики и playable HTML-export.",
+            bullets: ["Инструмент помогает не только писать, но и проверять.", "Это хороший материал для публичного changelog и devlog."],
+          },
+          {
+            kicker: "Project layer",
+            title: "Даже слой управления проектами заметно взрослеет.",
+            body: "README описывает многослойный workspace, а свежие изменения улучшают первый экран через ProjectManager redesign, cover images, descriptions и MindSpace.",
+            bullets: ["Появляется сильнее выраженный first-run experience.", "Это делает сам продукт визуально более законченным."],
+          },
+        ],
+      },
+      gallery: {
+        eyebrow: "Скриншоты",
+        title: "Несколько реальных экранов уже помогают понять характер продукта.",
+        body: "В галерее используются реальные кадры из текущей live-версии. Это лучше, чем абстрактные мокапы: по ним видно плотность интерфейса и рабочие режимы.",
+        items: [
+          {
+            title: "Project hub",
+            body: "Стартовый экран с tutorial, demo и созданием нового проекта.",
+            image: "/media/screenshots/workspace-overview.png",
+            size: "wide",
+          },
+          {
+            title: "Script Studio",
+            body: "Текстовый режим, в котором можно работать со сценарием как с живым документом.",
+            image: "/media/screenshots/script-studio.png",
+            size: "tall",
+          },
+          {
+            title: "Narrative canvas",
+            body: "Главный канвас с ветвлением, сценой и видимой структурой диалогов.",
+            image: "/media/screenshots/worldbuilding-and-qa.png",
+          },
+          {
+            title: "Playtest view",
+            body: "Отдельный режим для проверки логики прохождения внутри редактора.",
+            image: "/media/screenshots/playtest-mode.png",
+          },
+        ],
+      },
+      video: {
+        eyebrow: "Видео",
+        title: "Секция готова для walkthrough или короткого product tour.",
+        body: "Сейчас здесь placeholder. Когда появится ролик, достаточно будет добавить embed URL, и блок автоматически превратится во встроенное видео.",
+        placeholderTitle: "Видео пока не подключено",
+        placeholderBody: "Лучше всего здесь сработает короткий product walkthrough на 60-120 секунд.",
+        notesTitle: "Что стоит показать в видео",
+        notes: [
+          "создание сцены на канвасе и быстрые связи между нодами",
+          "переход в Script Studio и обратную синхронизацию",
+          "playtest, аналитику и playable HTML-export",
+        ],
+      },
+      changelog: {
+        eyebrow: "Последние изменения",
+        title: "Обновления помогают показать, что инструмент живой и активно собирается.",
+        body: "Вместо длинной технической стены здесь оставлены самые понятные изменения, которые влияют на качество работы, удобство интерфейса и зрелость продукта.",
+        highlights: [
+          {
+            label: "Latest focus",
+            title: "ProjectManager redesign",
+            body: "Новый входной экран с обложками, описаниями и более чистым стартом.",
+          },
+          {
+            label: "Usability",
+            title: "Font and color controls",
+            body: "Глобальные настройки чтения, fitView при загрузке и удобнее HelpCenter.",
+          },
+          {
+            label: "Author workflow",
+            title: "MindSpace + LogicBuilder",
+            body: "Быстрый захват идей и более зрелая работа с условиями и эффектами.",
+          },
+          {
+            label: "Testing value",
+            title: "Playtest + HTML export",
+            body: "Сильнее оформленная демонстрация и проверка narrative-проектов.",
+          },
+        ],
+        items: [
+          {
+            tag: "2026-03-28",
+            title: "ProjectManager стал сильнее как точка входа",
+            body: "Этот апдейт особенно важен для сайта, потому что он усиливает первый экран продукта и делает проекты визуально понятнее.",
+            bullets: [
+              "карточки с обложками",
+              "описания проектов",
+              "новый layout для tutorial, demo и нового проекта",
+            ],
+          },
+          {
+            tag: "2026-03-28",
+            title: "Интерфейс стал мягче и удобнее для длинной работы",
+            body: "Размер текста, цветовые пресеты и fitView на загрузке улучшают именно ежедневный опыт использования.",
+            bullets: [
+              "четыре уровня масштаба текста",
+              "пять вариантов цветовой подачи",
+              "fullscreen и drag для HelpCenter",
+            ],
+          },
+          {
+            tag: "2026-03-28",
+            title: "Логика и идеи получили отдельное внимание",
+            body: "MindSpace и LogicBuilder показывают, что продукт развивается не только в сторону UI, но и в сторону мышления внутри проекта.",
+            bullets: [
+              "панель заметок и идей",
+              "named rules и condition modes",
+              "AI лучше понимает logic-aware сценарии",
+            ],
+          },
+          {
+            tag: "2026-03-27 → 2026-03-28",
+            title: "Плейтест и экспорт стали особенно полезны для демо",
+            body: "Это делает продукт понятнее для стороннего наблюдателя: можно не только редактировать историю, но и сразу проверять её в playable форме.",
+            bullets: [
+              "save/load и rewind",
+              "метрики покрытия и debug",
+              "полноценный HTML-export с VN-интерфейсом",
+            ],
+          },
+        ],
+      },
+      stack: {
+        eyebrow: "Tech foundation",
+        title: "На сайте стоит показывать не только UX, но и технологическую опору.",
+        body: "Для такого инструмента стек и экспортные форматы важны, потому что они объясняют серьёзность продукта и его пригодность для реального пайплайна.",
+        cards: [
+          {
+            title: "Frontend",
+            body: "React 19, TypeScript, React Flow, Tailwind CSS и Vite.",
+          },
+          {
+            title: "Data and storage",
+            body: "Firebase Firestore, Firebase Storage и локальное сохранение для offline-first сценариев.",
+          },
+          {
+            title: "AI layer",
+            body: "Google Gemini используется как встроенный редакционный слой, а не как внешний чат.",
+          },
+          {
+            title: "Formats",
+            body: "JSON, Ink, Twee, Fountain и playable HTML помогают встроить Gordian Node в разные narrative pipelines.",
+          },
+        ],
+      },
+      next: {
+        eyebrow: "Что ещё полезно",
+        title: "Что ещё стоит добавить этому проекту, чтобы сайт стал по-настоящему законченным.",
+        body: "Это уже не базовая правка интерфейса, а следующий слой пользы. Эти элементы лучше всего усилят доверие к продукту и помогут людям быстрее понять его ценность.",
+        cards: [
+          {
+            title: "Короткий product walkthrough",
+            body: "Один хороший ролик на 60-120 секунд объяснит больше, чем ещё один абзац текста.",
+            note: "Самый полезный следующий шаг.",
+          },
+          {
+            title: "Публичный roadmap или devlog",
+            body: "Раз changelog активный, можно вынести рядом и более читаемый план ближайших направлений.",
+          },
+          {
+            title: "Getting started",
+            body: "Короткий блок про первый запуск, demo project и базовый сценарий использования сильно снизит порог входа.",
+          },
+          {
+            title: "Деплой и аналитика",
+            body: "GitHub Pages или Netlify для публикации, плюс простая веб-аналитика, чтобы понять, что смотрят на сайте чаще всего.",
+          },
+        ],
+      },
+    },
+    footer: {
+      note: "Сайт собран как спокойная product-facing витрина для Gordian Node.",
+      links: [
+        { label: "Live app", href: liveUrl },
+        { label: "Main repository", href: repoUrl },
+        { label: "Promo repository", href: promoRepoUrl },
+      ],
+    },
+  },
+  en: {
+    metaTitle: "Gordian Node | Narrative workspace",
+    nav: [
+      { label: "Overview", href: "#overview" },
+      { label: "Capabilities", href: "#workflows" },
+      { label: "Current direction", href: "#combined" },
+      { label: "Screenshots", href: "#gallery" },
+      { label: "Updates", href: "#changelog" },
+      { label: "What still helps", href: "#next" },
+    ],
+    hero: {
+      eyebrow: "Narrative Design Workspace",
+      title: "A calmer product site for a complex narrative tool.",
+      body: "Gordian Node is a browser-based workspace for branching dialogue, narrative structure, worldbuilding, logic, playtesting, and export. Instead of scattering that work across unrelated documents, it keeps the whole system in one place.",
+      primary: "Open live build",
+      secondary: "View repository",
+      facts: [
+        "Visual graph, Script Studio, worldbuilding, QA, and export live inside one product.",
+        "Useful for writers, narrative designers, and smaller game teams.",
+        "README and changelog already show both the product shape and active development rhythm.",
+      ],
+      metrics: [
+        { value: "React 19", label: "core product stack" },
+        { value: "JSON / Ink / Twee / Fountain / HTML", label: "export formats" },
+        { value: "AI + QA + Playtest", label: "not just authoring but validation" },
+        { value: "RU / EN", label: "bilingual site support" },
+      ],
+    },
+    sections: {
+      overview: {
+        eyebrow: "Overview",
+        title: "Less aggressive marketing, more product clarity.",
+        body: "This version presents Gordian Node as a serious working environment. The tone is quieter, the copy stays closer to the README, and recent product updates are integrated into the wider story instead of isolated as a noisy feature wall.",
+        cards: [
+          {
+            title: "What the tool is",
+            body: "A visual editor for narrative projects where branches, dialogue, conditions, and scenes behave like a manageable system.",
+          },
+          {
+            title: "Who it is for",
+            body: "Writers of interactive stories, visual novel teams, RPG dialogue work, and narrative prototyping.",
+          },
+          {
+            title: "Why the tone changed",
+            body: "Because the product benefits more from confidence and structure than from loud landing-page language.",
+          },
+        ],
+      },
+      workflows: {
+        eyebrow: "Core workflows",
+        title: "The main product layers worth showing on the site.",
+        body: "Gordian Node becomes easier to understand when it is framed through real workflows rather than one long list of features.",
+        cards: [
+          {
+            title: "Node graph",
+            body: "A canvas for scenes, lines, conditions, transitions, groups, and narrative logic.",
+            bullets: ["Quick Connect and multiselect", "Search, layout, filters, and scenes", "Readable conditions and effects on the canvas"],
+          },
+          {
+            title: "Script Studio",
+            body: "A Fountain-oriented writing mode with two-way sync between text and graph.",
+            bullets: ["Autocomplete for characters, locations, and variables", "Editor, preview, and split-view", "Useful for long-form writing passes"],
+          },
+          {
+            title: "Worldbuilding",
+            body: "Project bible, character codex, location atlas, variables, and asset library inside the same workspace.",
+            bullets: ["Context for the team", "Context for AI", "Structure for larger narrative projects"],
+          },
+          {
+            title: "AI layer",
+            body: "Gemini is framed as an embedded assistant for scenes, ideas, logic, and text import rather than a detached chatbot.",
+            bullets: ["Project-aware suggestions", "Raw text and lore import", "Help with scene continuation"],
+          },
+          {
+            title: "QA and playtest",
+            body: "Story structure can be checked inside the editor instead of only after export.",
+            bullets: ["Graph Linter and analytics", "Saves, rewind, and debug", "TimeMachine and snapshots"],
+          },
+          {
+            title: "Export",
+            body: "Projects can move into other pipelines or become quickly shareable interactive builds.",
+            bullets: ["JSON, Ink, Twee, and Fountain", "Playable HTML export", "Useful for demos and reviews"],
+          },
+        ],
+      },
+      combined: {
+        eyebrow: "README + Changelog",
+        title: "What the architecture promises and how current development already reinforces it.",
+        body: "This section ties the README to the changelog. One describes the product shape, the other proves where that shape is becoming deeper, smoother, and more mature.",
+        cards: [
+          {
+            kicker: "Graph + logic",
+            title: "The graph is already more than a visual scene map.",
+            body: "The README establishes a graph editor with dialogue, scenes, and transitions. The changelog extends that with Rule Sheet, LogicBuilder, condition modes, and clearer logic representation directly on the canvas.",
+            bullets: ["That is compelling for narrative designers.", "The site can show a real logic workspace, not just a diagram editor."],
+          },
+          {
+            kicker: "Script Studio",
+            title: "The writing mode is growing toward a fuller production workflow.",
+            body: "The README anchors Fountain, two-way sync, and an editor/preview flow. The changelog then strengthens that with character autocomplete, AI awareness, and studio-level UX improvements.",
+            bullets: ["The product supports both writing flow and structural control.", "This is one of the strongest sections for screenshots and video."],
+          },
+          {
+            kicker: "QA + export",
+            title: "Playtest and export have become part of the core value.",
+            body: "The README already includes analytics, linting, and export. Recent work adds save/load, rewind, debug, coverage metrics, and a playable HTML export.",
+            bullets: ["The tool helps with validation, not only authoring.", "This is strong material for public updates and devlogs."],
+          },
+          {
+            kicker: "Project layer",
+            title: "Even project management and first-run experience are maturing.",
+            body: "The README outlines a broader workspace, while the latest changes improve first contact through a redesigned ProjectManager, cover images, descriptions, and MindSpace.",
+            bullets: ["The product feels more complete as a workspace.", "The entry experience itself is becoming easier to present."],
+          },
+        ],
+      },
+      gallery: {
+        eyebrow: "Screenshots",
+        title: "A few real screens already convey the product better than abstract mockups.",
+        body: "The gallery uses actual captures from the live build. They help communicate density, layout, and working modes without overexplaining the interface.",
+        items: [
+          {
+            title: "Project hub",
+            body: "The starting view with tutorial, demo, and new project entry points.",
+            image: "/media/screenshots/workspace-overview.png",
+            size: "wide",
+          },
+          {
+            title: "Script Studio",
+            body: "A focused text mode for working with the screenplay as a living document.",
+            image: "/media/screenshots/script-studio.png",
+            size: "tall",
+          },
+          {
+            title: "Narrative canvas",
+            body: "The main graph view with branching structure and scene context.",
+            image: "/media/screenshots/worldbuilding-and-qa.png",
+          },
+          {
+            title: "Playtest view",
+            body: "A dedicated mode for checking progression and structure inside the editor.",
+            image: "/media/screenshots/playtest-mode.png",
+          },
+        ],
+      },
+      video: {
+        eyebrow: "Video",
+        title: "The section is ready for a short walkthrough or product tour.",
+        body: "It currently stays as a placeholder. Once a video exists, adding the embed URL will turn this block into a proper player.",
+        placeholderTitle: "Video not connected yet",
+        placeholderBody: "A 60-120 second walkthrough would probably be the most useful next media asset.",
+        notesTitle: "What the video should probably show",
+        notes: [
+          "creating a scene on the canvas and connecting nodes",
+          "moving into Script Studio and syncing back",
+          "playtest, analytics, and playable HTML export",
+        ],
+      },
+      changelog: {
+        eyebrow: "Recent changes",
+        title: "Updates help communicate that the tool is active and still taking shape.",
+        body: "Instead of copying a long technical changelog verbatim, this section keeps the most legible improvements that affect workflow quality, usability, and product maturity.",
+        highlights: [
+          {
+            label: "Latest focus",
+            title: "ProjectManager redesign",
+            body: "A clearer starting screen with covers, descriptions, and a stronger entry point.",
+          },
+          {
+            label: "Usability",
+            title: "Font and color controls",
+            body: "Reading controls, fitView on load, and a more practical HelpCenter.",
+          },
+          {
+            label: "Author workflow",
+            title: "MindSpace + LogicBuilder",
+            body: "Faster idea capture and more mature condition/effect editing.",
+          },
+          {
+            label: "Testing value",
+            title: "Playtest + HTML export",
+            body: "A stronger way to test and demonstrate narrative work.",
+          },
+        ],
+        items: [
+          {
+            tag: "2026-03-28",
+            title: "ProjectManager became a stronger entry point",
+            body: "This matters on the site because it reinforces the first screen of the product and makes projects easier to read visually.",
+            bullets: [
+              "project cover cards",
+              "project descriptions",
+              "a cleaner layout for tutorial, demo, and new project flow",
+            ],
+          },
+          {
+            tag: "2026-03-28",
+            title: "The interface became easier to live in",
+            body: "Text sizing, color presets, and fitView on load improve the everyday working experience rather than just adding surface-level novelty.",
+            bullets: [
+              "four text scale levels",
+              "five text color presets",
+              "fullscreen and drag support for HelpCenter",
+            ],
+          },
+          {
+            tag: "2026-03-28",
+            title: "Logic and ideation received focused attention",
+            body: "MindSpace and LogicBuilder suggest the product is evolving both visually and conceptually.",
+            bullets: [
+              "idea capture panel",
+              "named rules and condition modes",
+              "AI better understands logic-aware scenarios",
+            ],
+          },
+          {
+            tag: "2026-03-27 → 2026-03-28",
+            title: "Playtest and export became much easier to demonstrate",
+            body: "That makes the product easier for a new visitor to understand: it is not only an editor, but a place to validate story flow in a playable form.",
+            bullets: [
+              "save/load and rewind",
+              "coverage metrics and debug",
+              "full HTML export with a VN-style interface",
+            ],
+          },
+        ],
+      },
+      stack: {
+        eyebrow: "Tech foundation",
+        title: "The site should show not only UX, but also implementation credibility.",
+        body: "For this kind of tool, the stack and export formats matter because they explain seriousness, scope, and practical fit inside real pipelines.",
+        cards: [
+          {
+            title: "Frontend",
+            body: "React 19, TypeScript, React Flow, Tailwind CSS, and Vite.",
+          },
+          {
+            title: "Data and storage",
+            body: "Firebase Firestore, Firebase Storage, and local persistence for offline-first flows.",
+          },
+          {
+            title: "AI layer",
+            body: "Google Gemini is used as an embedded editorial layer rather than an external chat widget.",
+          },
+          {
+            title: "Formats",
+            body: "JSON, Ink, Twee, Fountain, and playable HTML help Gordian Node fit multiple narrative pipelines.",
+          },
+        ],
+      },
+      next: {
+        eyebrow: "What still helps",
+        title: "What would make this project site feel more complete next.",
+        body: "These are not basic UI tasks anymore. They are the next layer of trust-building that would help visitors understand the tool faster and with more confidence.",
+        cards: [
+          {
+            title: "A short product walkthrough",
+            body: "One strong 60-120 second video would explain the product faster than another large block of copy.",
+            note: "Probably the highest-value next addition.",
+          },
+          {
+            title: "A public roadmap or devlog",
+            body: "Since the changelog is active, it would help to pair it with a simpler view of what comes next.",
+          },
+          {
+            title: "Getting started",
+            body: "A small onboarding section around the demo project and first-use flow would lower the barrier to entry.",
+          },
+          {
+            title: "Deployment and analytics",
+            body: "GitHub Pages or Netlify for publishing, plus lightweight analytics to understand which sections visitors actually use.",
+          },
+        ],
+      },
+    },
+    footer: {
+      note: "This site is framed as a calm, product-facing presentation of Gordian Node.",
+      links: [
+        { label: "Live app", href: liveUrl },
+        { label: "Main repository", href: repoUrl },
+        { label: "Promo repository", href: promoRepoUrl },
+      ],
+    },
+  },
+};

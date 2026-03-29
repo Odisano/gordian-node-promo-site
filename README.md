@@ -1,19 +1,29 @@
 # Gordian Node Promo Site
 
-Статический промо-сайт для проекта `Gordian Node`.
+React + Tailwind promotional website for `Gordian Node`.
 
-## Что внутри
+## Stack
 
-- лендинг с продающей подачей
-- блок под встраиваемое видео
-- галерея скриншотов
-- changelog на основе текущего состояния репозитория
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-## Быстрый старт
+## Run locally
 
-Можно открыть `index.html` напрямую в браузере или поднять любой статический сервер.
+```bash
+npm install
+npm run dev
+```
 
-## Что менять в первую очередь
+## Build
 
-- `script.js` → `videoConfig.embedUrl` для подключения видео
-- папка `assets/screenshots/` для замены placeholder-слотов реальными скриншотами
+```bash
+npm run build
+```
+
+## Notes
+
+- UI supports Russian and English.
+- Screenshots live in `public/media/screenshots/`.
+- Video embed can be enabled in `src/content.ts`.
